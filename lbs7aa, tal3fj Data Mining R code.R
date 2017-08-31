@@ -4,6 +4,25 @@ library(dplyr)
 train <- read.csv("train.csv")
 test <- read.csv("test.csv")
 
+#Cleaning years into ages
+#We are going to take a look at our year variables and turn them into something more meaninful
+#like age.
+#Utilizing age instead of year will give us more insight into our data set and to see 
+#if there are potential correlations to price for those houses that are younger in terms of age
+#common sense would have it that the younger the age -> the higher the price sold
+
+summary(train$YearBuilt)
+#Min is 1872 - oldest house built
+train$AgeBuilt = (train$YearBuilt - 1872)
+
+summary(train$YearRemodAdd)
+#min 1950 ... max 2010
+train$AgeSinceRemod = (train$YearRemodAdd - 1950)
+
+#see if there's a correlation
+age.lm <- lm(SalePrice ~ AgeBuilt + AgeSinceRemod, data = train)
+summary(age.lm)
+
 cols <- c(3, 6:17, 22:26, 28:34, 36, 40:43, 54, 56, 58, 59, 61, 64:66, 73:75, 79:80)
 
 train[cols] <- lapply(train[cols], factor)
