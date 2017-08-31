@@ -165,3 +165,19 @@ test_predictions[is.na(test_predictions)] = mean(test_predictions[!is.na(test_pr
 kaggle_submission = cbind(test$Id, test_predictions)
 colnames(kaggle_submission) = c("Id", "SalePrice")
 write.csv(kaggle_submission, file = "basic_linear_model.csv", row.names = FALSE)
+      
+
+#MODEL 3 is a model that takes into account relative p values of each independent variable
+model3 <- lm(SalePrice ~ LotArea + LandSlope + Neighborhood + Condition1
+             + Condition2 + OverallQual + OverallCond + RoofMatl +
+               Exterior1st + Exterior2nd + MasVnrArea + ExterQual +
+               ExterCond + BsmtQual + BsmtCond + BsmtExposure +
+               BsmtFinSF1 + BsmtFinSF2 + BsmtUnfSF +
+               KitchenQual, data = train_corrected2)
+
+test_predictions = predict(model3, newdata = test, type = "response")
+test_predictions[test_predictions<0] <- 0
+test_predictions[is.na(test_predictions)] = mean(test_predictions[!is.na(test_predictions)])
+kaggle_submission = cbind(test$Id, test_predictions)
+colnames(kaggle_submission) = c("Id", "SalePrice")
+write.csv(kaggle_submission, file = "basic_linear_model3.csv", row.names = FALSE)
