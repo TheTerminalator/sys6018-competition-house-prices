@@ -181,3 +181,23 @@ test_predictions[is.na(test_predictions)] = mean(test_predictions[!is.na(test_pr
 kaggle_submission = cbind(test$Id, test_predictions)
 colnames(kaggle_submission) = c("Id", "SalePrice")
 write.csv(kaggle_submission, file = "basic_linear_model3.csv", row.names = FALSE)
+
+#MODEL 4
+#BEST KAGGLE MODEL YET
+model <- lm(SalePrice ~ ., data = train_corrected2)
+summary(model)
+
+model4 <- lm(SalePrice ~ Neighborhood + Condition1
+             + Condition2 + OverallQual + OverallCond +
+               MasVnrArea + ExterQual + BsmtQual + BsmtCond + BsmtExposure +
+               BsmtFinSF1 + BsmtFinSF2 + BsmtUnfSF + AgeSinceRemod + AgeBuilt +
+               KitchenQual, data = train_corrected2)
+summary(model4)
+plot(train_corrected2$KitchenQual, train_corrected2$SalePrice)
+
+test_predictions = predict(model4, newdata = test, type = "response")
+test_predictions[test_predictions<0] <- 0
+test_predictions[is.na(test_predictions)] = mean(test_predictions[!is.na(test_predictions)])
+kaggle_submission = cbind(test$Id, test_predictions)
+colnames(kaggle_submission) = c("Id", "SalePrice")
+write.csv(kaggle_submission, file = "basic_linear_model4.csv", row.names = FALSE)
