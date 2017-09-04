@@ -9,7 +9,7 @@ Tyler Lewris (tal3fj)
 Sai Prasanth (lbs7aa)
 
 Roles/Responsibilities for each teammate: 
-Given that we only have two members for this assignment, our roles are flexible and will most likely change throughout the project. Additionally, in terms of specific code, we both collaborated with one another through an iterative process and used the best pieces of eachothers code.
+Given that we only have two members for this assignment, our roles are flexible and will most likely change throughout the project. Additionally, each of us contributed in some form or another for each "role" listed below.
 
 Tyler Lewris:
 Github Coordinator - Manage github repository and all corresponding files.
