@@ -15,13 +15,13 @@ Tyler Lewris:
 Github Coordinator - Manage github repository and all corresponding files.
 Team Organizer - Manage team meeting times, structure of meetings, and time management.
 Data Cleaner - Identify and replace missing values in data sets
-Parametric - Create a parametric linear model to use as a submission on Kaggle
+Parametric - Create a parametric model to use as a submission on Kaggle
 Code Commenter - make sure code is thoroughly commented
 
 Sai Prasanth
 Data Cleaner - Identify and replace missing values in data sets
 Data Exploration - Explore relationships among variables and identify important variables
-Non Parametric - Create a non-parametric linear model to use as a submission on Kaggle
+Non Parametric - Create a non-parametric model to use as a submission on Kaggle
 Code Commenter - make sure code is thoroughly commented
 
 
