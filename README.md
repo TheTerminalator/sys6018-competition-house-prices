@@ -18,7 +18,7 @@ Data Cleaner - Identify and replace missing values in data sets
 Parametric - Create a parametric model to use as a submission on Kaggle
 Code Commenter - make sure code is thoroughly commented
 
-Sai Prasanth
+Sai Prasanth:
 Data Cleaner - Identify and replace missing values in data sets
 Data Exploration - Explore relationships among variables and identify important variables
 Non Parametric - Create a non-parametric model to use as a submission on Kaggle
