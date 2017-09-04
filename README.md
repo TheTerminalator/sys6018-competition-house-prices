@@ -5,7 +5,10 @@ Tyler Lewris (tal3fj)
 Sai Prasanth ( .    )
 
 Roles for each teammate: 
-GitHub Coordinator: Tyler Lewris
+Given that we only have two members for this assignment, our roles are flexible and will most likely change throughout the project. Additionally, in terms of specific code, we both collaborated with one another through an iterative process and used the best pieces of eachothers code.
+
+GitHub Coordinator/Team Organizer/Data Cleaner/Parametric: Tyler Lewris
+Data Cleaner/Data Exploration/Non Parametric/Code Commenter: Sai Prasanth
 
 
 GRADING CRITERIA:
