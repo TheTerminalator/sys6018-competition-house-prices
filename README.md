@@ -1,36 +1,27 @@
 # sys6018-competition-house-prices
 
+Competition 1-9 House Prices
+SYS 6018 Data Mining
+5 September 2017
+
 Teammates: 
 Tyler Lewris (tal3fj)
-Sai Prasanth ( .    )
+Sai Prasanth (lbs7aa)
 
-Roles for each teammate: 
+Roles/Responsibilities for each teammate: 
 Given that we only have two members for this assignment, our roles are flexible and will most likely change throughout the project. Additionally, in terms of specific code, we both collaborated with one another through an iterative process and used the best pieces of eachothers code.
 
-GitHub Coordinator/Team Organizer/Data Cleaner/Parametric: Tyler Lewris
-Data Cleaner/Data Exploration/Non Parametric/Code Commenter: Sai Prasanth
+Tyler Lewris:
+Github Coordinator - Manage github repository and all corresponding files.
+Team Organizer - Manage team meeting times, structure of meetings, and time management.
+Data Cleaner - Identify and replace missing values in data sets
+Parametric - Create a parametric linear model to use as a submission on Kaggle
+Code Commenter - make sure code is thoroughly commented
+
+Sai Prasanth
+Data Cleaner - Identify and replace missing values in data sets
+Data Exploration - Explore relationships among variables and identify important variables
+Non Parametric - Create a non-parametric linear model to use as a submission on Kaggle
+Code Commenter - make sure code is thoroughly commented
 
 
-GRADING CRITERIA:
-Everyone on your team will receive the same grade, which will be assessed on the basis of evidence found for the following key activities:
-
-Data exploration
-Data cleaning (missing values, outliers, etc.)
-Rationale for the selected statistical modeling methods
-Correct implementation and use of statistical modeling methods
-Appropriate model selection approach (train/test, cross-validation, etc.)
-Thoroughly documented code (R comments)
-Appropriate use of functions to reduce code complexity and redundancy
-
-Bonus points will be awarded to the 5 top-ranked teams as follows:
-
-If R <= 5:  Bonus = 10 * (1 / R) 
-
-Otherwise:  Bonus = 0
-
-where R is your team's rank within the class (ignoring submissions by others who are not in the class). The top-ranked team will have R=1 and will thus receive 10 bonus points on this assignment.
-
-Notes:
-
-You have limited competition entries per day. Plan accordingly.
-Your Kaggle submission timestamp and your GitHub commit timestamp must both be prior to the assignment due date in order to receive a non-zero score on this assignment.
