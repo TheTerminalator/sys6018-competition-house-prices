@@ -1,7 +1,7 @@
 #Tyler Lewris
 #tal3fj
 #Sai Prasanth
-#lbs7aa
+#
 #SYS 6018 Competition 1-9 House Prices
 #September 5th 2017
 
@@ -331,10 +331,15 @@ summary(model_adjusted1)
 model_adjusted2 <- lm(SalePrice ~ MSZoning + Neighborhood + OverallQual + ExterQual + BsmtQual + `1stFlrSF` + `2ndFlrSF` + KitchenQual + AgeBuilt, data = train_corrected2)
 summary(model_adjusted2)
 
+# Polynomial regression
+
+model_adjusted6 <- lm(SalePrice ~ MSZoning + Neighborhood + OverallQual + ExterQual + BsmtQual + `1stFlrSF` + `2ndFlrSF` + KitchenQual + AgeBuilt + AgeBuilt^2  + OverallQual^2 + `1stFlrSF`^2 +  `2ndFlrSF`^2, data = train_corrected2)
 
 #--------------------RATIONALE FOR THE SELECTED STATISTICAL MODELING METHODS-----------
 
 # We focussed on Linear Regression among parametric approaches because we believe that it is a great modelling technique and one that we are very comfortable with. Also, based on the plots we generated, it was apparent to us that most of the variables, the ones that are important had a linear relationship 
+
+# We also tried polynomial regression after tweaking our linear regression models. We wondered if some of the variables are quadratically related. However, all the polynomial models (with only variables containing numeric values) gave us very poor results. Even the model with all the linear along quadratic predictors didn't outperform our best linear model
 
 # We choose K-NN as our parametric approach since we don't have a lot of important numeric variables. Based on the plots we generated, it seemed like only 4 numeric parameters were important and K-NN, an algrorithm convinient to implement could potentially give us a good answer
 
