@@ -1,7 +1,7 @@
 #Tyler Lewris
 #tal3fj
 #Sai Prasanth
-# lbs7aa
+#lbs7aa
 #SYS 6018 Competition 1-9 House Prices
 #September 5th 2017
 
@@ -207,7 +207,9 @@ plot(train_corrected2$Condition1, train_corrected2$SalePrice)
 
 plot(train_corrected2$Condition2, train_corrected2$SalePrice)
 
-# Just from the graph, it seems like there are differences across categories. But then we noticed that more than 95% of the data points are filled with one value 'Norm'. So we are ignoring these two as well
+#Just from the graph, it seems like there are differences across categories. 
+#But then we noticed that more than 95% of the data points are filled with one value 'Norm'. 
+#So we are ignoring these two as well
 
 plot(train_corrected2$OverallQual, train_corrected2$SalePrice)
 
@@ -253,7 +255,8 @@ summary(train_corrected2$BsmtExposure)
 
 summary(test_corrected2$BsmtExposure)
 
-# It seems like there is significant difference only if there is no basement at all. But that aspect is captured is other variables. Hence, not including this variable
+# It seems like there is significant difference only if there is no basement at all. 
+# But that aspect is captured is other variables. Hence, not including this variable
 
 plot(train_corrected2$BsmtFinSF1, train_corrected2$SalePrice) # we need to subset to understand relationship
 
@@ -316,7 +319,7 @@ plot(train_corrected2$AgeBuilt, train_corrected2$SalePrice)
 
 #-----------------------------------PARAMETRIC APPROACH-------------------------------
 
-# Building a linear model with only the ones that are found to be significant
+# Building a linear model with only the variables that are found to be significant
 
 
 model_selected <- lm(SalePrice ~ MSZoning + Neighborhood + OverallQual + RoofMatl + ExterQual + BsmtQual + `1stFlrSF` + `2ndFlrSF` + KitchenQual + Fireplaces, data = train_corrected2)
@@ -328,6 +331,7 @@ summary(model_selected)
 model_adjusted1 <- lm(SalePrice ~ MSZoning + Neighborhood + OverallQual + ExterQual + BsmtQual + `1stFlrSF` + `2ndFlrSF` + KitchenQual, data = train_corrected2)
 summary(model_adjusted1)
 
+# Let's add AgeBuilt as we believe, and have seen, that it is an important factor in purchasing a home
 model_adjusted2 <- lm(SalePrice ~ MSZoning + Neighborhood + OverallQual + ExterQual + BsmtQual + `1stFlrSF` + `2ndFlrSF` + KitchenQual + AgeBuilt, data = train_corrected2)
 summary(model_adjusted2)
 
@@ -337,15 +341,24 @@ model_adjusted6 <- lm(SalePrice ~ MSZoning + Neighborhood + OverallQual + ExterQ
 
 #--------------------RATIONALE FOR THE SELECTED STATISTICAL MODELING METHODS-----------
 
-# We focussed on Linear Regression among parametric approaches because we believe that it is a great modelling technique and one that we are very comfortable with. Also, based on the plots we generated, it was apparent to us that most of the variables, the ones that are important had a linear relationship 
+# We focussed on Linear Regression among parametric approaches because we believe that it is a great 
+# modelling technique and one that we are very comfortable with. 
+# Also, based on the plots we generated, it was apparent to us that most of the variables, 
+# the ones that are important had a linear relationship 
 
-# We also tried polynomial regression after tweaking our linear regression models. We wondered if some of the variables are quadratically related. However, all the polynomial models (with only variables containing numeric values) gave us very poor results. Even the model with all the linear along quadratic predictors didn't outperform our best linear model
+# We also tried polynomial regression after tweaking our linear regression models. 
+# We wondered if some of the variables are quadratically related. 
+# However, all the polynomial models (with only variables containing numeric values) 
+# gave us very poor results. Even the model with all the linear along quadratic predictors 
+# didn't outperform our best linear model
 
-# We choose K-NN as our parametric approach since we don't have a lot of important numeric variables. Based on the plots we generated, it seemed like only 4 numeric parameters were important and K-NN, an algrorithm convinient to implement could potentially give us a good answer
+# We choose K-NN as our non-parametric approach since we have few important numeric variables. 
+# Based on the plots we generated, it seemed like only 4 numeric parameters were important and K-NN, 
+# an algrorithm convinient to implement, could potentially give us a good answer.
 
 #-----------------------------------REGRESSION CROSS VALIDATION----------------------------------
 
-#The Validation Set Approach
+#First Cross Validation Approach
 nrow(train_corrected2)
 #1451 total observations, split into two groups
 
@@ -377,7 +390,7 @@ cv.lm(train_corrected2, model_adjusted2, m=3, dots =
 
 
 #-----------------------------------NON PARAMETRIC APPROACH--------------------------
-
+#K Nearest Neighbor (KNN)
 #This creates subsets of the data and here we are only using numerical predictors. 
 
 group <- 1:725
